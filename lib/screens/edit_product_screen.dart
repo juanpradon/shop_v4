@@ -27,6 +27,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
     price: 0,
     description: '',
     imageUrl: '',
+    userId: '',
     isFavorite: false,
   );
 
@@ -72,6 +73,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
           'price': _editedProduct.price.toString(),
           'description': _editedProduct.description,
           'imageUrl': '',
+          'userId': '',
           'isFavorite': _editedProduct.isFavorite.toString(),
         };
         _imageUrlController.text = _editedProduct.imageUrl;
@@ -203,6 +205,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           description: _editedProduct.description,
                           price: _editedProduct.price,
                           imageUrl: _editedProduct.imageUrl,
+                          userId: _editedProduct.userId,
                           isFavorite: _editedProduct.isFavorite,
                         )),
                   ),
@@ -234,6 +237,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           description: _editedProduct.description,
                           price: double.parse(newValue.toString()),
                           imageUrl: _editedProduct.imageUrl,
+                          userId: _editedProduct.userId,
                           isFavorite: _editedProduct.isFavorite,
                         )),
                   ),
@@ -258,6 +262,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           description: newValue.toString(),
                           price: _editedProduct.price,
                           imageUrl: _editedProduct.imageUrl,
+                          userId: _editedProduct.userId,
                           isFavorite: _editedProduct.isFavorite,
                         )),
                   ),
@@ -311,6 +316,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                                 description: _editedProduct.description,
                                 price: _editedProduct.price,
                                 imageUrl: newValue.toString(),
+                                userId: _editedProduct.userId,
                                 isFavorite: _editedProduct.isFavorite,
                               )),
                           /* onEditingComplete: () {

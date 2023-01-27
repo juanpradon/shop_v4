@@ -20,13 +20,22 @@ class OrderItem {
 class Orders with ChangeNotifier {
   List<OrderItem> _orders = [];
 
+  String _authToken;
+  String _userid;
+
+  Orders(
+    this._authToken,
+    this._userid,
+    this._orders,
+  );
+
   List<OrderItem> get orders {
     return [..._orders];
   }
 
   Future<void> fetchAndSetOrders() async {
     final url = Uri.parse(
-        'https://flutter-itt-default-rtdb.firebaseio.com/orders.json');
+        'https://flutter-itt-default-rtdb.firebaseio.com/orders/$_userid.json?auth=$_authToken');
 
     //try {
 
@@ -66,7 +75,7 @@ class Orders with ChangeNotifier {
 
   Future<void> addOrder(List<CartItem> cartProducts, double total) async {
     final url = Uri.parse(
-        'https://flutter-itt-default-rtdb.firebaseio.com/orders.json');
+        'https://flutter-itt-default-rtdb.firebaseio.com/orders/$_userid.json?auth=$_authToken');
 
     //try {
 
